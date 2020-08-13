@@ -1,0 +1,11 @@
+Habitants nearestHabitant = null;
+float nearestDist = Mathf.Infinity;
+foreach (Habitants habitant in (Habitants)FindObjectsOfType(typeof(Habitants)))
+{
+  float dist = (transform.position - habitant.transform.position).sqrMangitude;
+  if(dist < nearestDist)
+  {
+    nearestDist = dist;
+    nearestHabitant = habitant;
+  }
+}
